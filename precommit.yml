@@ -1,0 +1,10 @@
+pre-commit:
+    enabled: true
+    overwrite: true
+    commands:
+        test: phpunit
+post-commit:
+    enabled: false
+    overwrite: false
+    commands:
+        test: phpunit

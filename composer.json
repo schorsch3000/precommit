@@ -1,0 +1,27 @@
+{
+    "name": "schorsch3000/precommit",
+    "description": "runs defined commands on git hooks, like phpunit on precommit",
+    "type": "library",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name":  "Dirk Heilig",
+            "email": "dicky.dicky@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/yaml":    "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "PreCommit\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-update-cmd":  "PreCommit\\Handler::install",
+        "post-install-cmd": "PreCommit\\Handler::install"
+    },
+    "bin":["precommit"]
+}
